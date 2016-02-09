@@ -69,6 +69,7 @@ class UserStocksController < ApplicationController
   # DELETE /user_stocks/1
   # DELETE /user_stocks/1.json
   def destroy
+    @user_stock.stock.destroy
     @user_stock.destroy
     respond_to do |format|
       format.html { redirect_to my_portfolio_path, notice: 'Stock was successfully destroyed.' }
